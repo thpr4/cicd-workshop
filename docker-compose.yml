@@ -1,12 +1,23 @@
 version: '2'
 services:
-  spring-orders:
-    image: 'otomato/springorders:master'
+  oto-frontend:
+    image: 'antweiss/otofrontend:master'
+    links: 
+     - otoprod
     ports:
-      - 8080
+     - 3000
+  otoprod:
+    image: 'antweiss/otoproducts:master'
+    ports:
+     - 5000
     links:
      - mongo
+  spring-orders:
+    image: 'otomato/springorders:master'
+    links:
+     - mongo
+    ports:
+     - 8080
   mongo:
     image: mongo
-    ports:
-      - 8888
+
