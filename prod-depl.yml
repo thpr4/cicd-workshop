@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: otoprod
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: otoprod
+    spec:
+      containers:
+      - name: otoprod
+        image: antweiss/otoproducts:master
+        ports:
+        - containerPort: 5000

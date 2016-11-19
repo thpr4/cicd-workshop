@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: otoorders
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: otoorders
+    spec:
+      containers:
+      - name: otoorders
+        image: otomato/springorders:master
+        ports:
+        - containerPort: 8080
