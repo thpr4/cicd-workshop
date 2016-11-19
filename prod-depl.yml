@@ -14,3 +14,4 @@ spec:
         image: antweiss/otoproducts:master
         ports:
         - containerPort: 5000
+        imagePullPolicy: Always
